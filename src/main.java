@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class main {
@@ -10,12 +8,13 @@ public class main {
         System.out.println("\t2. View all employee infomation");
         System.out.println("\t3. View the employee's information hs the highest total salary");
         System.out.println("\t4. Delete employee by ID");
-        System.out.println("\t5. Exit");
+        System.out.println("\t5. Update employee by ID");
+        System.out.println("\t6. Exit");
         Scanner sc = new Scanner(System.in);
         do{
             int choice = sc.nextInt();
             sc.nextLine();
-            if (choice<1 || choice>4){
+            if (choice<1 || choice>6){
                 System.out.print("Invalid. Enter again: ");
             } else return choice;
         } while(true);    
@@ -44,6 +43,10 @@ public class main {
                 	break;
                 }
                 case 5:{
+                	dataEmployee.update();
+                	break;
+                }
+                case 6:{
                     System.exit(0);
                 }
             }

@@ -115,6 +115,29 @@ public class listEmployee {
 			}
 		}
 	}
+	public void update() {
+		System.out.println("\n========= UPDATE =========");
+		System.out.print("Enter employee ID to update: ");
+		Scanner scanner = new Scanner(System.in);
+		String idDelete = scanner.nextLine();
+		employee employeeUpdate = null; 
+		for(employee item : list) {
+			if(item.id.equalsIgnoreCase(idDelete)) {
+				employeeUpdate = item;
+				break;
+			}
+		}
+		if(employeeUpdate!=null) {
+			System.out.println("\n========= UPDATE INFORMATION =========");
+			if(employeeUpdate instanceof lecturer) {
+				((lecturer)employeeUpdate).add(scanner);
+			}else if (employeeUpdate instanceof officer) {
+				((officer)employeeUpdate).add(scanner);
+			}
+		}else {
+			System.out.println("Not found employee !");
+		}
+	}
 }
 
 
